@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Finder</title>
+    <link rel="stylesheet" href="/styles/library.css">
+</head>
+
+<body>
+
+
+  
+
+    <dialog id="dialogAsModal">
+        <h2 style="text-align: center; margin-top: 8px; margin-bottom: 0px;">User Information</h2>    
+        <p style="margin: 15px; text-align: justify; font-size: large;">The API used on this website can be found <a href="https://dev.springernature.com/docs">here</a>. Journals for search requests are 
+        listed <a href="https://www.nature.com/siteindex">here</a>. For a quick start, activate the checkbox for <b>Only Open Access</b> on the last element in the input field and press <b>Start</b>.</p>
+        <p style="text-align: center; margin-top: 10px; margin-bottom: 8px; font-size: large;">Have fun!</p>
+        <div style="display: flex; justify-content: center; margin-top: 25px; margin-bottom: 5px;">
+            <button class="switch-button" style="width: 100px; height: 50px; background-color: lightblue;" id="closebutton" onclick="closeDialoge()">Close</button>
+        </div>
+    </dialog>
+    
+    <div class="div-1">
+        <h1 class="header">Search For Nature Science Articles</h1>
+
+        <div class="skyline">
+            <button class="switch-button" id="showModal" onclick="showMe()">User Info</button>
+
+            <form action="/modern" method="post">
+                <button type="submit" class="switch-button">Modern</button>
+            </form>
+
+            <form action="/clearold" method="post">
+                <button type="submit"  class="switch-button">Clear</button>
+            </form>
+        </div>  
+
+
+
+
+        
+        <form class="input-form" action="/get" method="post">
+
+        
+
+
+                   
+            <div class="grid-container">
+                
+                    <div class="div-4">
+                        <h4>Journal/Category</h2>
+                            <input list="journalList" name="journal" autocomplete="off" placeholder="All Categories">
+                            <datalist id="journalList">
+                                <option value="Acta Pharmacologica Sinica">
+                                <option value="BDJ In Practice">
+                                <option value="BDJ Open">
+                                <option value="BDJ Student">
+                                <option value="BDJ Team">
+                                <option value="Biopharma Dealmakers">
+                                <option value="BJC Reports">
+                                <option value="Blood Cancer Journal">
+                                <option value="Bone Marrow Transplantation">
+                                <option value="Bone Research">
+                                <option value="British Dental Journal">
+                                <option value="British Journal of Cancer">
+                                <option value="Cancer Gene Therapy">
+                                <option value="Cell Death and Differentiation">
+                                <option value="Cell Death and Disease">
+                                <option value="Cell Death Discovery">
+                                <option value="Cell Discovery">
+                                <option value="Cell Research">
+                                <option value="Cellular and Molecular Immunology">
+                                <option value="Communications Biology">
+                                <option value="Communications Chemistry">
+                                <option value="Communications Earth and Environment">
+                                <option value="Communications Engineering">
+                                <option value="Communications Materials">
+                                <option value="Communications Medicine">
+                                <option value="Communications Physics">
+                                <option value="Communications Psychology">
+                                <option value="European Journal of Clinical Nutrition">
+                                <option value="European Journal of Human Genetics">
+                                <option value="Evidence-Based Dentistry">
+                                <option value="Experimental and Molecular Medicine">
+                                <option value="Eye">
+                                <option value="Gene Therapy">
+                                <option value="Genes and Immunity">
+                                <option value="Heredity">
+                                <option value="Human Genome Variation">
+                                <option value="Humanities and Social Sciences Communications">
+                                <option value="Hypertension Research">
+                                <option value="International Journal of Impotence Research">
+                                <option value="International Journal of Obesity">
+                                <option value="International Journal of Obesity Supplements">
+                                <option value="International Journal of Oral Science">
+                                <option value="ISME Communications">
+                                <option value="The ISME Journal">
+                                <option value="The Journal of Antibiotics">
+                                <option value="Journal of Exposure Science and Environmental Epidemiology">
+                                <option value="Journal of Human Genetics">
+                                <option value="Journal of Human Hypertension">
+                                <option value="Journal of Perinatology">
+                                <option value="Lab Animal">
+                                <option value="Laboratory Investigation">
+                                <option value="Leukemia">
+                                <option value="Leukemia Supplements">
+                                <option value="Light: Science and Applications">
+                                <option value="Microsystems and Nanoengineering">
+                                <option value="Modern Pathology">
+                                <option value="Molecular Psychiatry">
+                                <option value="Mucosal Immunology">
+                                <option value="Nature">
+                                <option value="Nature Africa">
+                                <option value="Nature Aging">
+                                <option value="Nature Astronomy">
+                                <option value="Nature Biomedical Engineering">
+                                <option value="Nature Biotechnology">
+                                <option value="Nature Cancer">
+                                <option value="Nature Cardiovascular Research">
+                                <option value="Nature Catalysis">
+                                <option value="Nature Cell Biology">
+                                <option value="Nature Chemical Biology">
+                                <option value="Nature Chemical Engineering">
+                                <option value="Nature Chemistry">
+                                <option value="Nature Cities">
+                                <option value="Nature Climate Change">
+                                <option value="Nature Communications">
+                                <option value="Nature Computational Science">
+                                <option value="Nature Digest">
+                                <option value="Nature Ecology and Evolution">
+                                <option value="Nature Electronics">
+                                <option value="Nature Energy">
+                                <option value="Nature Food">
+                                <option value="Nature Genetics">
+                                <option value="Nature Geoscience">
+                                <option value="Nature Human Behaviour">
+                                <option value="Nature Immunology">
+                                <option value="Nature India">
+                                <option value="Nature Italy">
+                                <option value="Nature Machine Intelligence">
+                                <option value="Nature Materials">
+                                <option value="Nature Medicine">
+                                <option value="Nature Mental Health">
+                                <option value="Nature Metabolism">
+                                <option value="Nature Methods">
+                                <option value="Nature Microbiology">
+                                <option value="Nature Nanotechnology">
+                                <option value="Nature Neuroscience">
+                                <option value="Nature Photonics">
+                                <option value="Nature Physics">
+                                <option value="Nature Plants">
+                                <option value="Nature Protocols">
+                                <option value="Nature Reviews Bioengineering">
+                                <option value="Nature Reviews Cancer">
+                                <option value="Nature Reviews Cardiology">
+                                <option value="Nature Reviews Chemistry">
+                                <option value="Nature Reviews Clinical Oncology">
+                                <option value="Nature Reviews Disease Primers">
+                                <option value="Nature Reviews Drug Discovery">
+                                <option value="Nature Reviews Earth and Environment">
+                                <option value="Nature Reviews Electrical Engineering">
+                                <option value="Nature Reviews Endocrinology">
+                                <option value="Nature Reviews Gastroenterology and Hepatology">
+                                <option value="Nature Reviews Genetics">
+                                <option value="Nature Reviews Immunology">
+                                <option value="Nature Reviews Materials">
+                                <option value="Nature Reviews Methods Primers">
+                                <option value="Nature Reviews Microbiology">
+                                <option value="Nature Reviews Molecular Cell Biology">
+                                <option value="Nature Reviews Nephrology">
+                                <option value="Nature Reviews Neurology">
+                                <option value="Nature Reviews Neuroscience">
+                                <option value="Nature Reviews Physics">
+                                <option value="Nature Reviews Psychology">
+                                <option value="Nature Reviews Rheumatology">
+                                <option value="Nature Reviews Urology">
+                                <option value="Nature Structural and Molecular Biology">
+                                <option value="Nature Sustainability">
+                                <option value="Nature Synthesis">
+                                <option value="Nature Water">
+                                <option value="Neuropsychopharmacology">
+                                <option value="NPG Asia Materials">
+                                <option value="npj 2D Materials and Applications">
+                                <option value="npj Advanced Manufacturing">
+                                <option value="npj Aging">
+                                <option value="npj Antimicrobials and Resistance">
+                                <option value="npj Biodiversity">
+                                <option value="npj Biofilms and Microbiomes">
+                                <option value="npj Biological Physics and Mechanics">
+                                <option value="npj Biological Timing and Sleep">
+                                <option value="npj Biosensing">
+                                <option value="npj Breast Cancer">
+                                <option value="npj Cardiovascular Health">
+                                <option value="npj Clean Water">
+                                <option value="npj Climate Action">
+                                <option value="npj Climate and Atmospheric Science">
+                                <option value="npj Computational Materials">
+                                <option value="npj Digital Medicine">
+                                <option value="npj Flexible Electronics">
+                                <option value="npj Genomic Medicine">
+                                <option value="npj Imaging">
+                                <option value="npj Materials Degradation">
+                                <option value="npj Materials Sustainability">
+                                <option value="npj Mental Health Research">
+                                <option value="npj Metabolic Health and Disease">
+                                <option value="npj Microgravity">
+                                <option value="npj Nanophotonics">
+                                <option value="npj Natural Hazards">
+                                <option value="npj Ocean Sustainability">
+                                <option value="npj Parkinson's Disease">
+                                <option value="npj Precision Oncology">
+                                <option value="npj Primary Care Respiratory Medicine">
+                                <option value="npj Quantum Information">
+                                <option value="npj Quantum Materials">
+                                <option value="npj Regenerative Medicine">
+                                <option value="npj Robotics">
+                                <option value="npj Science of Food">
+                                <option value="npj Science of Learning">
+                                <option value="npj Spintronics">
+                                <option value="npj Sustainable Agriculture">
+                                <option value="npj Sustainable Mobility and Transport">
+                                <option value="npj Systems Biology and Applications">
+                                <option value="npj Unconventional Computing">
+                                <option value="npj Urban Sustainability">
+                                <option value="npj Vaccines">
+                                <option value="npj Viruses">
+                                <option value="npj Women's Health">
+                                <option value="Nutrition and Diabetes">
+                                <option value="Oncogene">
+                                <option value="Oncogenesis">
+                                <option value="Pediatric Research">
+                                <option value="The Pharmacogenomics Journal">
+                                <option value="Polymer Journal">
+                                <option value="Prostate Cancer and Prostatic Diseases">
+                                <option value="Schizophrenia">
+                                <option value="Scientific American">
+                                <option value="Scientific American Mind">
+                                <option value="Scientific Data">
+                                <option value="Scientific Reports">
+                                <option value="Signal Transduction and Targeted Therapy">
+                                <option value="Spinal Cord">
+                                <option value="Spinal Cord Series and Cases">
+                                <option value="Translational Psychiatry">
+                            </datalist>
+                    </div>
+
+                    <div class="div-4">
+                        <h4>Words in Document</h4>
+                        <input type="text" name="words" placeholder="e.g. python java">
+                    </div>
+
+
+                    <div class="div-4">
+                        <h4>Words in Title</h4>
+                        <input type="text" name="title" placeholder="e.g. artificial">
+                    </div>
+
+                    <div class="div-4">
+                        <h4>Year of Publication</h4>
+                        <select id="yearOfPublication" name="year" oninput="checkYearOfPublication(this)">
+                            <option value="none" selected>Not specified</option>
+
+                            <% var year=new Date().getFullYear() + 2; %>
+
+                                <% while (year> 1850){ %>
+
+                                    <option value=<%=year %>> <%= year %>
+                                    </option>
+                                    <% year--; %>
+
+                                <% } %>
+                        </select>
+                    </div>
+                    
+                    <div class="div-4">
+                        <h4>Search from:</h4>
+                        <input type="text" name="fromDate" placeholder="YYYY-MM-DD" oninput="validateDateFrom(this)">
+                        <span id="fromDateMessage" style="color: red; font-size: x-small;"></span>
+                    </div>
+
+                    <div class="div-4">
+                        <h4>Search to:</h4>
+                        <input type="text" name="toDate" placeholder="YYYY-MM-DD" oninput="validateDateTo(this)">
+                        <span id="toDateMessage" style="color: red; font-size: x-small;"></span>
+                    </div>
+                
+                    <div class="div-4">
+                        <h4>Type of Literature</h4>
+                        <select name="type">
+                            <option value="Both" selected>Journal & Book</option>
+                            <option value="Book">Book</option>
+                            <option value="Journal">Journal</option>
+                        </select>
+                    </div>
+
+                    <div class="div-4">
+                        <h4>Articles to display</h4>
+                        <select name="numberOfResults">
+                            <option value="1">1</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+
+                    <div class="div-4">
+                        <h4 id="headerAccess">Access</h4>
+                        <div class="checkbox-container">
+                            <input id="check" type="checkbox" name="accessCheck" value="1" class="checkbox-div" onclick="changeTextColor()" style="height: 20px; width: 20px; margin: 0 5px 0 5px; padding: 0;">
+                            <p id="accessLabel" style="padding: 0; margin: 0; font-size: small; font-family: sans-serif; color: rgb(98, 98, 98);">Only Open Access</p>
+                        </div>
+                    </div>
+                
+            
+            </div><!--grid-container-->
+                         
+                <span id="incorrectDateMessage" style="font-size: small;"></span>
+                <span id="incorrectYearOfPubMessage" style="font-size: small;"></span> 
+                
+                <!-------------------------------------------------------------------------------------------------------------------------------------------------------------->  
+
+                <div class="div-submit">
+                    <h4>Search for Articles</h4>
+                    <input class="start-search-input" type="submit" value="Start">
+                </div>
+
+                <!-------------------------------------------------------------------------------------------------------------------------------------------------------------->  
+
+                <% if (locals.contentInfo){ %>
+                    
+                    <% if ( contentInfo["timeSearchInfo"] !="OK" ) {%>
+
+                        <p style="color: rgb(255, 255, 255); text-align: center;"><%= contentInfo["timeSearchInfo"] %><p>
+
+                    <% } else { %>
+
+                        <h3 style="margin: 50px 0 15px 0;"><i>Table 1: Search Field Input</i></h3>
+
+                        <table border="1">
+                            <tr>
+                                <th><h4 style="margin-bottom: 10px; margin-top: 10px;">Search Option</h4></th>
+                                <th><h4 style="margin-bottom: 10px; margin-top: 10px;">Input Value</h4></th>
+                            </tr>
+                        <% for (let i=0; i < contentInfo["inputParameter"].length; i++){ %>
+
+                        <%  var obj = contentInfo["inputParameter"][i] %>
+
+                            <% for (var key in obj) { %>
+
+                                <% if (obj.hasOwnProperty(key)) { %>                                    
+
+                                    <tr class="table-padding">
+                                        <td class="table-padding"><%= key %></td>
+                                        <td class="table-padding"><%= obj[key] %></td>
+                                    </tr>
+
+                                <% } %>
+
+                            <% } %>                    
+
+                        <% } %>
+
+                        </table>
+                        
+                        
+
+                        <h3 style="margin: 15px 0 15px 0;"><i>Table 2: Results</i></h3>
+
+                        <table style="margin-bottom: 30px;" border="1">
+                            <tr>
+                                <th><h4 style="margin-bottom: 10px; margin-top: 10px;">Availability</h4></th>
+                                <th><h4 style="margin-bottom: 10px; margin-top: 10px;">Amount</h4></th>
+                            </tr>
+                            <tr>
+                                <td class="table-padding">Total Found Documents</td>
+                                <td class="table-padding"><%=contentInfo["totalFound"]%></td>
+                            </tr>
+                            <tr>
+                                <td class="table-padding">Listed Documents</td>
+                                <td class="table-padding"><%=contentInfo["articelsToDisplay"]%></td>
+                            </tr>
+                        </table>
+
+                    <% } %>
+
+                <% } %>
+            
+        </form>
+
+    </div><!--div-1-->
+
+
+        <% if (locals.content){ %>
+
+            <% for (let i=0; i<content.length; i++){ %>
+
+                <div class="div-article">
+
+                    
+                    <h1 style="margin-bottom: 10px; margin-top: 70px"><i>Title</i></h1>
+                    <h3 style="margin-top: 0px; margin-bottom: 5px; padding: 0 5% 0 5%; text-align: center; line-height: 25px;"><%= content[i]["title"] %></h3>
+
+                    <% if (content[i]["abstract"]=="undefined" ){ %>
+                        <h2 style="margin-bottom: 10px; margin-top: 40px"><i>Abstract:</i></h2>
+                        <p style="margin: 4rem 0;"><i>- No Abstract available -</i> </p>
+
+                        <% } else { %>
+
+                            <h2 style="margin-bottom: 10px; margin-top: 40px"><i>Abstract:</i></h2>
+                            <div class="div-abstract-available"> <%= content[i]["abstract"] %></div>
+
+                        <% } %>
+
+                            <h3 style="margin-bottom: 10px; margin-top: 25px; text-align: center"><i>Date of Publication (Printed Version)</i></h3>
+                            <h3 style="margin-top: 0px; margin-bottom: 25px"><%= content[i]["publicationDate"] %></h3>
+                            <h3 style="margin-bottom: 10px"><i>URL</i></h3>
+                            <h3 style="margin-top: 0px; margin-bottom: 50px; text-align: center;"><a href=<%=content[i]["url"] %>><%=content[i]["url"] %></a></h3>
+
+                </div>
+
+            <% } %>
+
+        <% } %>
+
+    <script>
+
+var inputDateFrom = "";
+var inputDateTo = "";
+var compareDateMessage = document.getElementById("incorrectDateMessage");
+var publicationMessage = document.getElementById("incorrectYearOfPubMessage");
+var accessibility = document.getElementById("accessLabel");
+var checker = document.getElementById("check");
+var checkboxHeader = document.getElementById("headerAccess");
+
+//------------------------------------------------------------------------------------------------------------------//
+
+var dialogButton = document.getElementById("closeButton");
+var modal = document.getElementById("dialogAsModal")
+
+function closeDialoge(){
+    modal.close();
+}
+
+function showMe(){
+    modal.showModal();
+}
+
+modal.addEventListener("click", e => {
+    const dialogDimensions = modal.getBoundingClientRect();
+    if (e.clientX < dialogDimensions.left || e.clientX > dialogDimensions.right || e.clientY < dialogDimensions.top || e.clientY > dialogDimensions.bottom){
+        modal.close();
+    }
+});
+
+//------------------------------------------------------------------------------------------------------------------//
+
+
+function changeTextColor(){
+
+    var isChecked = checker.checked;
+    console.log(isChecked);
+
+    if (isChecked){
+        checkboxHeader.style.visibility = "hidden";
+        accessibility.style.fontWeight = "bold";
+        accessibility.style.color = "black";
+
+    } else {
+        checkboxHeader.style.visibility = "visible";
+        accessibility.style.color = "rgb(98, 98, 98)";
+        accessibility.style.fontWeight = "normal";
+        
+    }
+}
+
+
+function checkYearOfPublication(input) {
+    publicationMessage.textContent = "";
+    var difference = 0;
+    if (input.value != "none") {
+        inputValue = parseInt(input.value);
+
+        //CASE 1 - SearchFrom AND SearchTo are given//
+        if (inputDateFrom.length == 10 && inputDateTo.length == 10) {
+            const dateFromArray = inputDateFrom.split("-");
+            const yearFrom = parseInt(dateFromArray[0]);
+            const dateToArray = inputDateTo.split("-");
+            const yearTo = parseInt(dateToArray[0]);
+
+            //Year of Publication before start search//
+            if (inputValue < yearFrom) {
+                difference = yearFrom - inputValue;
+                if (difference > 1) {
+                    publicationMessage.textContent = "Year of Publication is more than one year before search start.";
+                }
+            }
+            //Year of Publication after search end//
+            if (inputValue > yearTo) {
+                difference = inputValue - yearTo;
+                if (difference > 1) {
+                    publicationMessage.textContent = "Year of Publication is more than one year after search end.";
+                }
+            }
+        //CASE 2 - Only SearchFrom is given//
+        } else if (inputDateFrom.length == 10) {
+            const dateFromArray = inputDateFrom.split("-");
+            const yearFrom = parseInt(dateFromArray[0]);
+            if (inputValue < yearFrom) {
+                difference = yearFrom - inputValue;
+                if (difference > 1) {
+                    publicationMessage.textContent = "Year of Publication is more than one year before search start.";
+                }
+            }
+        //CASE 3 - Only SearchTo is given//
+        } else if (inputDateTo.length == 10) {
+            const dateToArray = inputDateTo.split("-");
+            const yearTo = parseInt(dateToArray[0]);
+            if (inputValue > yearTo) {
+                difference = inputValue - yearTo;
+                if (difference > 1) {
+                    publicationMessage.textContent = "Year of Publication is more than one year after search end.";
+                }
+            }
+        }
+        setTimeout(function () {
+            checkYearOfPublication(input);
+        }, 1000);
+    }
+}
+
+//------------------------------------------------------------------------------------------------------------------//
+
+function proveDate() {
+    if (inputDateFrom.length == 10 && inputDateTo.length == 10) {
+        const from = new Date(inputDateFrom);
+        const to = new Date(inputDateTo);
+        if (from > to) {
+            return true;
+        }
+    } return false;
+}
+
+//------------------------------------------------------------------------------------------------------------------//
+
+function validateDateFrom(input) {
+    publicationMessage.textContent = "";
+    compareDateMessage.textContent = "";
+    inputDateFrom = ""
+    document.getElementById("fromDateMessage").style.color = "red";
+    const datePattern = /^\d{0,4}-?\d{0,2}-?\d{0,2}$/;
+    const isValid = datePattern.test(input.value);
+    const validationMessage = document.getElementById("fromDateMessage");
+    validationMessage.textContent = "";
+    clearTimeout(input.timerID);
+    if (isValid || input.value === "") {
+        validationMessage.textContent = "";
+    } else {
+        validationMessage.textContent = "Date format: YYYY-MM-DD.";
+    }
+    const numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-"];
+    const numArrayLength = numArray.length;
+
+    var canGo = false;
+
+    for (let i = 0; i < input.value.length; i++) {
+        canGo = false;
+        for (let j = 0; j < numArrayLength; j++) {
+            if (input.value[i] == numArray[j]) {
+                canGo = true;
+            }
+        }
+        if (!canGo) {
+            validationMessage.textContent = "Invalid Character Input";
+            break;
+        }
+    }
+    if (input.value.length <= 4 && canGo) {
+        for (let i = 0; i < input.value.length; i++) {
+            if (input.value[i] == "-") {
+                validationMessage.textContent = "Date format: YYYY-MM-DD.";
+            }
+        }
+    }
+    if (canGo) {
+        if ((input.value.length >= 5 && input.value[4] != "-") || (input.value.length == 6 && input.value[5] == "-") ||
+            (input.value.length == 7 && input.value[6] == "-") || (input.value.length >= 8 && input.value[7] != "-")) {
+            validationMessage.textContent = "Date format: YYYY-MM-DD.";
+        }
+    }
+    if (input.value.length <= 9 && input.value.length > 0) {
+        input.timerID = setTimeout(function () {
+            validationMessage.textContent = "Date format: YYYY-MM-DD.";
+        }, 3000)
+    }
+    if (input.value.length == 10 && canGo == true) {
+        const parts = input.value.split('-');
+        const year = parseInt(parts[0] || 0, 10);
+        const month = parseInt(parts[1] || 0, 10);
+        const day = parseInt(parts[2] || 0, 10);
+
+        if (year < 1851 || year > new Date().getFullYear() + 1 || month < 1 || month > 12 || day < 1 || day > 31) {
+            document.getElementById("fromDateMessage").textContent = "Invalid Date";
+        } else {
+            inputDateFrom = input.value;
+            if (proveDate()) {
+                compareDateMessage.textContent = "Search start is chronologically after search end.";
+            }
+        }
+    }
+}
+
+//------------------------------------------------------------------------------------------------------------------//
+
+function validateDateTo(input) {
+    publicationMessage.textContent = "";
+    compareDateMessage.textContent = "";
+    inputDateTo = "";
+    document.getElementById("toDateMessage").style.color = "red";
+    const datePattern = /^\d{0,4}-?\d{0,2}-?\d{0,2}$/;
+    const isValid = datePattern.test(input.value);
+    const validationMessage = document.getElementById("toDateMessage");
+    validationMessage.textContent = "";
+    clearTimeout(input.timerID);
+    if (isValid || input.value === "") {
+        validationMessage.textContent = "";
+    } else {
+        validationMessage.textContent = "Date format: YYYY-MM-DD.";
+    }
+    const numArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-"];
+    const numArrayLength = numArray.length;
+
+    var canGo = false;
+
+    for (let i = 0; i < input.value.length; i++) {
+        canGo = false;
+        for (let j = 0; j < numArrayLength; j++) {
+            if (input.value[i] == numArray[j]) {
+                canGo = true;
+            }
+        }
+        if (!canGo) {
+            validationMessage.textContent = "Invalid Character Input";
+            break;
+        }
+    }
+    if (input.value.length <= 4 && canGo) {
+        for (let i = 0; i < input.value.length; i++) {
+            if (input.value[i] == "-") {
+                validationMessage.textContent = "Date format: YYYY-MM-DD.";
+            }
+        }
+    }
+    if (canGo) {
+        if ((input.value.length >= 5 && input.value[4] != "-") || (input.value.length == 6 && input.value[5] == "-") ||
+            (input.value.length == 7 && input.value[6] == "-") || (input.value.length >= 8 && input.value[7] != "-")) {
+            validationMessage.textContent = "Date format: YYYY-MM-DD.";
+        }
+    }
+    if (input.value.length <= 9 && input.value.length > 0) {
+        input.timerID = setTimeout(function () {
+            validationMessage.textContent = "Date format: YYYY-MM-DD.";
+        }, 3000)
+    }
+    if (input.value.length == 10 && canGo == true) {
+        const parts = input.value.split('-');
+        const year = parseInt(parts[0] || 0, 10);
+        const month = parseInt(parts[1] || 0, 10);
+        const day = parseInt(parts[2] || 0, 10);
+
+        if (year < 1851 || year > new Date().getFullYear() + 1 || month < 1 || month > 12 || day < 1 || day > 31) {
+            document.getElementById("toDateMessage").textContent = "Invalid Date";
+        } else {
+            inputDateTo = input.value;
+            if (proveDate()) {
+                compareDateMessage.textContent = "Search start is chronologically after search end.";
+            }
+        }
+    }
+}
+
+    </script>
+</body>
+
+</html>
